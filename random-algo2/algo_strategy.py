@@ -113,6 +113,18 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
     def build_defense(self, game_state):
+        #TODO: place walls right in the middle and separate them by one edge so that interceptors can walk through
+        #   xxxxxxxxxxxox
+        #   xoxxxxxxxxxxx
+        # where the attackers will go through the openings , 'o'
+        #
+        #
+
+        # from 0,13 to 27,13 and keep 26,13 open walls otherwise
+        # then at 1, 12 and at 26, 12 walls
+        # from 2, 11 to 25, 11 walls except to openings at 3, 11 or 24, 11
+        # and keep going
+
         # spawn walls along back lines
         # todo: order walls from outside in to prioritize protecting edges
         game_state.attempt_spawn(WALL, [[0, 13], [1, 13]])
